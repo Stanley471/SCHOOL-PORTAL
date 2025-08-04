@@ -1,0 +1,90 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/*div for checking results*/
+.container {
+    max-width: 400px;
+    margin: 80px auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+
+/* Select styles */
+select {
+    width: 50%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
+
+
+/* Admin link styles */
+.admin-link {
+    text-align: right;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.admin-link a {
+    color: #2C3E50;
+    text-decoration: none;
+}
