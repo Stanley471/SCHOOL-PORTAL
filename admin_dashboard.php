@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin_logged_in'])) {
-    header("Location: admin-login.php");
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header("Location: admin_login.php");
     exit();
 }
 ?>
@@ -12,7 +12,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
   <title>Admin Dashboard</title>
 </head>
 <body>
-  <h2>Welcome, <?php echo $_SESSION['admin_username']; ?>!</h2>
+  <h2>Welcome, <?php echo $_SESSION['username']; ?>!</h2>
   <p>This is the admin dashboard.</p>
   <a href="logout.php">Logout</a>
 </body>

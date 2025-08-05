@@ -1,37 +1,38 @@
 <?php
 session_start();
 //connect to the database
-$conn = new mysqli("localhost", "root", "", "school_portal");
+$serverName = "localhost";
+$username = "root";
+$password = "";
+$dbname = "school_portal";
+$conn = new mysqli($serverName, $username, $password, $dbname);
 
+//error message if the conn failed
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    echo("Connection failed: " . $conn->connect_error);
 }
 
-$username = trim($_POST['username']);
+
+//collect form data
+$username = $_POST['username'];
 $password = $_POST['password'];
 
 // Fetch admin from DB
-$sql = "SELECT * FROM admins WHERE username = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $username);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows === 1) {
-    $admin = $result->fetch_assoc();
-    
-    if (password_verify($password, $admin['password'])) {
-        $_SESSION['admin_logged_in'] = true;
-        $_SESSION['admin_username'] = $admin['username'];
-        header("Location: admin-dashboard.php");
-        exit();
-    } else {
-        echo "❌ Incorrect password";
-    }
+$sql = "SELECT * FROM admin WHERE username = '$username' and password = '$password'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // User exists, start session
+    $_SESSION["username"] = $username;
+    $_SESSION["role"] = "admin"; // Set user role to admin
+    // Redirect to admin dashboard or homepage
+    header("Location: admin_dashboard.php");
+    echo "✅ Login successful. Welcome, $username!";
 } else {
-    echo "❌ Admin not found";
+    // User does not exist
+    echo "❌ Invalid username or password. Please try again.";
 }
 
-$stmt->close();
+
+// Close the database connection
 $conn->close();
 ?>

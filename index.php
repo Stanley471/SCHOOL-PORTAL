@@ -26,7 +26,7 @@
       <h2>Welcome to Our Online Portal</h2>
       <p>Access student results, updates, and resources from anywhere.</p>
       <a href="check_result.php">Check Result</a>
-      <a href="admin-login.php">Admin Login</a>
+      <a href="admin_login.php">Admin Login</a>
     </div>
     <img src="assets/hero.jpg" alt="Hero Image">
   </section>

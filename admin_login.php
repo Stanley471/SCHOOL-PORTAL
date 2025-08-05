@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>School Result Portal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/check_results.css">
+  <link rel="stylesheet" href="assets/admin_login.css">
 </head>
 <body>
   <header>
