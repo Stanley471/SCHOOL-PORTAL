@@ -26,7 +26,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
       <li><a href="#"><i class="fas fa-user-graduate"></i> Students</a></li>
       <li><a href="#"><i class="fas fa-book"></i> Results</a></li>
       <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Staff</a></li>
-      <li><a href="#"><i class="fas fa-user"></i> Update Profile</a></li>
+      <li><a href="admin/update_profile.php"><i class="fas fa-user"></i> Update Profile</a></li>
       <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
     </ul>
   </div>
